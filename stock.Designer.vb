@@ -30,7 +30,10 @@ Partial Class stock
         Label2 = New Label()
         ComboBox1 = New ComboBox()
         Label3 = New Label()
+        DataGridView2 = New DataGridView()
+        Button2 = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DataGridView1
@@ -106,11 +109,30 @@ Partial Class stock
         Label3.TabIndex = 7
         Label3.Text = "Department / Personnel"
         ' 
+        ' DataGridView2
+        ' 
+        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView2.Location = New Point(461, 66)
+        DataGridView2.Name = "DataGridView2"
+        DataGridView2.Size = New Size(393, 326)
+        DataGridView2.TabIndex = 8
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(779, 413)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(75, 23)
+        Button2.TabIndex = 9
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' stock
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(448, 473)
+        ClientSize = New Size(874, 473)
+        Controls.Add(Button2)
+        Controls.Add(DataGridView2)
         Controls.Add(Label3)
         Controls.Add(ComboBox1)
         Controls.Add(Label2)
@@ -122,6 +144,7 @@ Partial Class stock
         Name = "stock"
         Text = "Stocks Manager"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -134,4 +157,6 @@ Partial Class stock
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Button2 As Button
 End Class
