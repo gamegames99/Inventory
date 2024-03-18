@@ -198,9 +198,11 @@ Partial Class stock
         ' 
         ' TextBox7
         ' 
+        TextBox7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox7.Location = New Point(607, 424)
         TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(180, 23)
+        TextBox7.ReadOnly = True
+        TextBox7.Size = New Size(94, 23)
         TextBox7.TabIndex = 11
         ' 
         ' TextBox8
@@ -236,9 +238,9 @@ Partial Class stock
         Label8.AutoSize = True
         Label8.Location = New Point(607, 406)
         Label8.Name = "Label8"
-        Label8.Size = New Size(66, 15)
+        Label8.Size = New Size(81, 15)
         Label8.TabIndex = 13
-        Label8.Text = "Item Name"
+        Label8.Text = "Item Identifier"
         ' 
         ' stock
         ' 

@@ -89,9 +89,9 @@ Partial Class equip
         ' TextBox9
         ' 
         TextBox9.Enabled = False
-        TextBox9.Location = New Point(27, 395)
+        TextBox9.Location = New Point(113, 54)
         TextBox9.Name = "TextBox9"
-        TextBox9.Size = New Size(100, 25)
+        TextBox9.Size = New Size(78, 25)
         TextBox9.TabIndex = 9
         ' 
         ' Label7
@@ -210,7 +210,7 @@ Partial Class equip
         TextBox2.Enabled = False
         TextBox2.Location = New Point(27, 54)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(92, 25)
+        TextBox2.Size = New Size(75, 25)
         TextBox2.TabIndex = 3
         ' 
         ' Button2

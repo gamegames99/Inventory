@@ -18,7 +18,7 @@ Public Class stock
                 conn.Open()
 
                 ' Retrieve data from stock table with eq_name instead of eq_id
-                Dim selectCommand As New SQLiteCommand("SELECT s.SID, s.quantity, s.receiver, e.eq_name AS equipment FROM stock s INNER JOIN equipment e ON s.equipment = e.eq_id", conn)
+                Dim selectCommand As New SQLiteCommand("SELECT s.quantity, s.receiver, s.date, e.eq_id AS equipment FROM stock s INNER JOIN equipment e ON s.equipment = e.eq_id", conn)
                 Dim dataAdapter As New SQLiteDataAdapter(selectCommand)
                 dataAdapter.Fill(stockTable)
 
@@ -76,10 +76,19 @@ Public Class stock
             column.Width = totalWidth / columnCount
         Next
     End Sub
+    Private Sub RC()
+        Dim totalWidth As Integer = DataGridView2.Width
+        Dim columnCount As Integer = DataGridView2.Columns.Count
+
+        For Each column As DataGridViewColumn In DataGridView2.Columns
+            column.Width = totalWidth / columnCount
+        Next
+    End Sub
     Private Sub stock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()
         ResizeColumns()
         newtable()
+        RC()
     End Sub
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         Try
@@ -126,9 +135,10 @@ Public Class stock
                             End Using
 
                             ' Add quantity to stock table
-                            Using addCmd As New SQLiteCommand("INSERT INTO stock(quantity, receiver, equipment) VALUES (@qy, @rv, @eqId)", conn)
+                            Using addCmd As New SQLiteCommand("INSERT INTO stock(quantity, receiver, date, equipment) VALUES (@qy, @rv,@dt, @eqId)", conn)
                                 addCmd.Parameters.AddWithValue("@qy", quantity)
                                 addCmd.Parameters.AddWithValue("@rv", TextBox5.Text)
+                                addCmd.Parameters.AddWithValue("@dt", DateTime.Now.ToString("MM/dd/yyyy HH:mm"))
                                 addCmd.Parameters.AddWithValue("@eqId", eqId)
                                 addCmd.ExecuteNonQuery()
                             End Using
@@ -139,7 +149,6 @@ Public Class stock
                         MsgBox("Saved!")
                         updatetable()
                         newtable()
-                        ResizeColumns()
                     End If
                 Else
                     Throw New Exception("Invalid value for Quantity.")
@@ -156,23 +165,63 @@ Public Class stock
         Try
             If DataGridView2.SelectedRows.Count > 0 Then
                 Dim selectedRow As DataGridViewRow = DataGridView2.SelectedRows(0)
-                Dim quantity As Integer = Convert.ToInt32(selectedRow.Cells("quantity").Value)
-                Dim equipmentId As Integer = Convert.ToInt32(selectedRow.Cells("equipment").Value)
+                Dim stockId As Integer = Convert.ToInt32(selectedRow.Cells("SID").Value)
+                Dim newQuantity As Integer = 0
 
-                ' Reduce quantity in DataGridView2
-                Dim newQuantity As Integer = quantity - 1
-                selectedRow.Cells("quantity").Value = newQuantity
+                If Integer.TryParse(TextBox6.Text, newQuantity) Then
+                    Dim difference As Integer = 0
+                    Dim equipmentId As Integer = Convert.ToInt32(selectedRow.Cells("equipment").Value)
 
-                ' Add quantity back to the selected row in DataGridView1
-                For Each row As DataGridViewRow In DataGridView1.Rows
-                    Dim eqId As Integer = Convert.ToInt32(row.Cells("eq_id").Value)
-                    If eqId = equipmentId Then
-                        Dim eqQuantity As Integer = Convert.ToInt32(row.Cells("eq_quantity").Value)
-                        row.Cells("eq_quantity").Value = eqQuantity + 1
-                        Exit For
-                    End If
-                Next
-                MsgBox("Quantity updated!")
+                    Using conn As New SQLiteConnection(connectionString)
+                        conn.Open()
+
+                        ' Retrieve the old quantity from the stock table
+                        Using oldQuantityCmd As New SQLiteCommand("SELECT quantity FROM stock WHERE SID = @stockId", conn)
+                            oldQuantityCmd.Parameters.AddWithValue("@stockId", stockId)
+                            Dim oldQuantityResult As Object = oldQuantityCmd.ExecuteScalar()
+                            If oldQuantityResult IsNot Nothing AndAlso oldQuantityResult IsNot DBNull.Value Then
+                                Dim oldQuantity As Integer = Convert.ToInt32(oldQuantityResult)
+                                difference = oldQuantity - newQuantity
+                            Else
+                                Throw New Exception("Failed to retrieve old quantity.")
+                            End If
+                        End Using
+
+                        ' Update the quantity in the stock table
+                        Using updateStockCmd As New SQLiteCommand("UPDATE stock SET quantity = @newQuantity WHERE SID = @stockId", conn)
+                            updateStockCmd.Parameters.AddWithValue("@newQuantity", newQuantity)
+                            updateStockCmd.Parameters.AddWithValue("@stockId", stockId)
+                            updateStockCmd.ExecuteNonQuery()
+                        End Using
+
+                        ' Update the quantity in the equipment table
+                        Using updateEquipmentCmd As New SQLiteCommand("UPDATE equipment SET eq_quantity = eq_quantity + @difference WHERE eq_id = @equipmentId", conn)
+                            updateEquipmentCmd.Parameters.AddWithValue("@difference", difference)
+                            updateEquipmentCmd.Parameters.AddWithValue("@equipmentId", equipmentId)
+                            updateEquipmentCmd.ExecuteNonQuery()
+                        End Using
+
+                        ' Recalculate the sum of eq_quantity
+                        Dim sum As Integer = 0
+                        Using sumCmd As New SQLiteCommand("SELECT SUM(eq_quantity) FROM equipment", conn)
+                            Dim result As Object = sumCmd.ExecuteScalar()
+                            If result IsNot Nothing AndAlso result IsNot DBNull.Value Then
+                                sum = Convert.ToInt32(result)
+                            End If
+                        End Using
+
+                        ' Update the TextBox1 with the new total quantity
+                        TextBox1.Text = sum.ToString()
+
+                        conn.Close()
+                    End Using
+
+                    MsgBox("Update Successful!")
+                    updatetable()
+                    newtable()
+                Else
+                    Throw New Exception("Invalid value for Quantity.")
+                End If
             Else
                 MsgBox("No row selected.")
             End If
