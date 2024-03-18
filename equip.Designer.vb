@@ -314,7 +314,7 @@ Partial Class equip
         Controls.Add(Button2)
         Controls.Add(DataGridView1)
         Name = "equip"
-        Text = "Equipment Manager"
+        Text = "Manage Equipment"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()

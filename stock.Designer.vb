@@ -36,6 +36,13 @@ Partial Class stock
         Label4 = New Label()
         Label5 = New Label()
         TextBox5 = New TextBox()
+        Button3 = New Button()
+        TextBox6 = New TextBox()
+        TextBox7 = New TextBox()
+        TextBox8 = New TextBox()
+        Label6 = New Label()
+        Label7 = New Label()
+        Label8 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -50,10 +57,10 @@ Partial Class stock
         ' 
         ' TextBox1
         ' 
-        TextBox1.Enabled = False
         TextBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox1.Location = New Point(248, 36)
         TextBox1.Name = "TextBox1"
+        TextBox1.ReadOnly = True
         TextBox1.Size = New Size(138, 23)
         TextBox1.TabIndex = 1
         ' 
@@ -73,18 +80,18 @@ Partial Class stock
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(346, 477)
+        Button1.Location = New Point(346, 480)
         Button1.Name = "Button1"
         Button1.Size = New Size(90, 33)
         Button1.TabIndex = 3
-        Button1.Text = "Save Entry"
+        Button1.Text = "Send Entry"
         Button1.UseVisualStyleBackColor = False
         ' 
         ' TextBox2
         ' 
         TextBox2.Location = New Point(12, 487)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(75, 23)
+        TextBox2.Size = New Size(80, 23)
         TextBox2.TabIndex = 4
         ' 
         ' Label2
@@ -119,7 +126,7 @@ Partial Class stock
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.DeepSkyBlue
-        Button2.Location = New Point(807, 468)
+        Button2.Location = New Point(807, 480)
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 33)
         Button2.TabIndex = 9
@@ -128,19 +135,19 @@ Partial Class stock
         ' 
         ' TextBox3
         ' 
-        TextBox3.Enabled = False
         TextBox3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox3.Location = New Point(12, 424)
         TextBox3.Name = "TextBox3"
+        TextBox3.ReadOnly = True
         TextBox3.Size = New Size(183, 23)
         TextBox3.TabIndex = 10
         ' 
         ' TextBox4
         ' 
-        TextBox4.Enabled = False
         TextBox4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox4.Location = New Point(248, 424)
         TextBox4.Name = "TextBox4"
+        TextBox4.ReadOnly = True
         TextBox4.Size = New Size(188, 23)
         TextBox4.TabIndex = 10
         ' 
@@ -166,30 +173,101 @@ Partial Class stock
         ' 
         TextBox5.Location = New Point(109, 487)
         TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(197, 23)
+        TextBox5.Size = New Size(216, 23)
         TextBox5.TabIndex = 4
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button3.FlatStyle = FlatStyle.Flat
+        Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.ForeColor = Color.DeepSkyBlue
+        Button3.Location = New Point(807, 417)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(75, 33)
+        Button3.TabIndex = 9
+        Button3.Text = "Update"
+        Button3.UseVisualStyleBackColor = False
+        ' 
+        ' TextBox6
+        ' 
+        TextBox6.Location = New Point(483, 424)
+        TextBox6.Name = "TextBox6"
+        TextBox6.Size = New Size(104, 23)
+        TextBox6.TabIndex = 11
+        ' 
+        ' TextBox7
+        ' 
+        TextBox7.Location = New Point(607, 424)
+        TextBox7.Name = "TextBox7"
+        TextBox7.Size = New Size(180, 23)
+        TextBox7.TabIndex = 11
+        ' 
+        ' TextBox8
+        ' 
+        TextBox8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        TextBox8.Location = New Point(690, 36)
+        TextBox8.Name = "TextBox8"
+        TextBox8.ReadOnly = True
+        TextBox8.Size = New Size(128, 23)
+        TextBox8.TabIndex = 12
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(483, 37)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(180, 17)
+        Label6.TabIndex = 2
+        Label6.Text = "Stock Quantity (Outbound) :"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(483, 406)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(53, 15)
+        Label7.TabIndex = 5
+        Label7.Text = "Quantity"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(607, 406)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(66, 15)
+        Label8.TabIndex = 13
+        Label8.Text = "Item Name"
         ' 
         ' stock
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(896, 578)
+        Controls.Add(Label8)
+        Controls.Add(TextBox8)
+        Controls.Add(TextBox7)
+        Controls.Add(TextBox6)
         Controls.Add(TextBox4)
         Controls.Add(TextBox3)
+        Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(DataGridView2)
         Controls.Add(Label3)
         Controls.Add(Label5)
         Controls.Add(Label4)
+        Controls.Add(Label7)
         Controls.Add(Label2)
         Controls.Add(TextBox5)
         Controls.Add(TextBox2)
         Controls.Add(Button1)
+        Controls.Add(Label6)
         Controls.Add(Label1)
         Controls.Add(TextBox1)
         Controls.Add(DataGridView1)
         Name = "stock"
-        Text = "Stocks Manager"
+        Text = "Manage Stock"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -210,4 +288,11 @@ Partial Class stock
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
 End Class

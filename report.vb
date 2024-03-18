@@ -64,14 +64,14 @@ Public Class report
             For Each column As DataGridViewColumn In dataGridView.Columns
                 writer.Write(column.HeaderText)
                 writer.Write(vbTab)
-                writer.Write("||")
+                writer.Write("| ")
             Next
             writer.WriteLine()
             For Each row As DataGridViewRow In dataGridView.Rows
                 For Each cell As DataGridViewCell In row.Cells
                     writer.Write(cell.Value?.ToString())
                     writer.Write(vbTab)
-                    writer.Write("//")
+                    writer.Write(" , ")
                 Next
                 writer.WriteLine()
             Next
