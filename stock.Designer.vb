@@ -58,6 +58,7 @@ Partial Class stock
         ' 
         ' TextBox1
         ' 
+        TextBox1.Enabled = False
         TextBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox1.Location = New Point(248, 36)
         TextBox1.Name = "TextBox1"
@@ -136,6 +137,7 @@ Partial Class stock
         ' 
         ' TextBox3
         ' 
+        TextBox3.Enabled = False
         TextBox3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox3.Location = New Point(26, 424)
         TextBox3.Name = "TextBox3"
@@ -145,6 +147,7 @@ Partial Class stock
         ' 
         ' TextBox4
         ' 
+        TextBox4.Enabled = False
         TextBox4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox4.Location = New Point(227, 424)
         TextBox4.Name = "TextBox4"
@@ -199,6 +202,7 @@ Partial Class stock
         ' 
         ' TextBox7
         ' 
+        TextBox7.Enabled = False
         TextBox7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox7.Location = New Point(470, 424)
         TextBox7.Name = "TextBox7"
@@ -208,6 +212,7 @@ Partial Class stock
         ' 
         ' TextBox8
         ' 
+        TextBox8.Enabled = False
         TextBox8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox8.Location = New Point(695, 37)
         TextBox8.Name = "TextBox8"
