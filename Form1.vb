@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Drawing
 
 Public Class Form1
-    Dim databasePath As String = IO.Path.Combine(Application.StartupPath, "Data\testdb.db")
+    Dim databasePath As String = IO.Path.Combine(Application.StartupPath, "Data\login.db")
     Dim connectionString As String = "Data Source=" & databasePath & ";Version=3;"
     Dim conn As SQLiteConnection
     Dim cmd As SQLiteCommand
@@ -12,7 +12,7 @@ Public Class Form1
         Try
             Using conn As New SQLiteConnection(connectionString)
                 conn.Open()
-                Using cmd As New SQLiteCommand("SELECT * FROM logindata WHERE user_name = @username AND user_pass = @password", conn)
+                Using cmd As New SQLiteCommand("SELECT * FROM user WHERE uname = @username AND upass = @password", conn)
                     cmd.Parameters.AddWithValue("@username", TextBox1.Text)
                     cmd.Parameters.AddWithValue("@password", TextBox2.Text)
 
