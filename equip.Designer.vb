@@ -221,9 +221,9 @@ Partial Class equip
         Button2.ForeColor = Color.DeepSkyBlue
         Button2.Location = New Point(621, 467)
         Button2.Name = "Button2"
-        Button2.Size = New Size(75, 30)
+        Button2.Size = New Size(90, 30)
         Button2.TabIndex = 2
-        Button2.Text = "Clear fields"
+        Button2.Text = "Clear Field"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Button1
@@ -267,9 +267,9 @@ Partial Class equip
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(302, 472)
+        TextBox1.Location = New Point(250, 472)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(205, 23)
+        TextBox1.Size = New Size(257, 23)
         TextBox1.TabIndex = 3
         ' 
         ' Button5
@@ -278,11 +278,11 @@ Partial Class equip
         Button5.FlatStyle = FlatStyle.Flat
         Button5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button5.ForeColor = Color.DeepSkyBlue
-        Button5.Location = New Point(975, 467)
+        Button5.Location = New Point(965, 467)
         Button5.Name = "Button5"
-        Button5.Size = New Size(75, 30)
+        Button5.Size = New Size(85, 30)
         Button5.TabIndex = 2
-        Button5.Text = "Save"
+        Button5.Text = "Add New"
         Button5.UseVisualStyleBackColor = False
         ' 
         ' Button6
@@ -291,9 +291,9 @@ Partial Class equip
         Button6.FlatStyle = FlatStyle.Flat
         Button6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button6.ForeColor = Color.DeepSkyBlue
-        Button6.Location = New Point(894, 467)
+        Button6.Location = New Point(864, 467)
         Button6.Name = "Button6"
-        Button6.Size = New Size(75, 30)
+        Button6.Size = New Size(85, 30)
         Button6.TabIndex = 2
         Button6.Text = "Update"
         Button6.UseVisualStyleBackColor = False

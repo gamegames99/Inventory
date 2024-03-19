@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.10" />
     <PackageReference Include="SQLite" Version="3.13.0" />
     <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />

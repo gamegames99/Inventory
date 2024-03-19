@@ -52,7 +52,7 @@ Partial Class report
         Button1.ForeColor = Color.DeepSkyBlue
         Button1.Location = New Point(12, 460)
         Button1.Name = "Button1"
-        Button1.Size = New Size(75, 30)
+        Button1.Size = New Size(88, 30)
         Button1.TabIndex = 2
         Button1.Text = "Refresh"
         Button1.UseVisualStyleBackColor = False
@@ -63,9 +63,9 @@ Partial Class report
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
-        Button2.Location = New Point(106, 460)
+        Button2.Location = New Point(118, 460)
         Button2.Name = "Button2"
-        Button2.Size = New Size(75, 30)
+        Button2.Size = New Size(91, 30)
         Button2.TabIndex = 2
         Button2.Text = "Print"
         Button2.UseVisualStyleBackColor = False
@@ -76,9 +76,9 @@ Partial Class report
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
-        Button3.Location = New Point(203, 460)
+        Button3.Location = New Point(228, 460)
         Button3.Name = "Button3"
-        Button3.Size = New Size(75, 30)
+        Button3.Size = New Size(91, 30)
         Button3.TabIndex = 2
         Button3.Text = "Save As"
         Button3.UseVisualStyleBackColor = False
@@ -91,16 +91,16 @@ Partial Class report
         Button4.ForeColor = Color.DeepSkyBlue
         Button4.Location = New Point(553, 460)
         Button4.Name = "Button4"
-        Button4.Size = New Size(75, 30)
+        Button4.Size = New Size(87, 30)
         Button4.TabIndex = 2
         Button4.Text = "Search"
         Button4.UseVisualStyleBackColor = False
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(345, 466)
+        TextBox1.Location = New Point(336, 466)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(202, 23)
+        TextBox1.Size = New Size(211, 23)
         TextBox1.TabIndex = 3
         ' 
         ' PrintPreviewDialog1

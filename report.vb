@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SQLite
 Imports System.Drawing.Printing
+Imports OfficeOpenXml
 Imports System.IO
 
 Public Class report
@@ -50,31 +51,38 @@ Public Class report
         End If
     End Sub
     Private filePath As String
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim saveFileDialog As New SaveFileDialog()
-        saveFileDialog.Filter = "Text Files (*.txt)|*.txt"
+        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx"
         If saveFileDialog.ShowDialog() = DialogResult.OK Then
             filePath = saveFileDialog.FileName
-            SaveDataToFile(DataGridView1)
+            SaveDataToExcel(DataGridView1)
             MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-    Private Sub SaveDataToFile(dataGridView As DataGridView)
-        Using writer As New StreamWriter(filePath)
-            For Each column As DataGridViewColumn In dataGridView.Columns
-                writer.Write(column.HeaderText)
-                writer.Write(vbTab)
-                writer.Write("| ")
+
+    Private Sub SaveDataToExcel(dataGridView As DataGridView)
+        ExcelPackage.LicenseContext = LicenseContext.Commercial
+        Using package As New ExcelPackage()
+            Dim worksheet As ExcelWorksheet = package.Workbook.Worksheets.Add("Sheet1")
+
+            ' Write column headers
+            For columnIndex As Integer = 0 To dataGridView.Columns.Count - 1
+                worksheet.Cells(1, columnIndex + 1).Value = dataGridView.Columns(columnIndex).HeaderText
             Next
-            writer.WriteLine()
-            For Each row As DataGridViewRow In dataGridView.Rows
-                For Each cell As DataGridViewCell In row.Cells
-                    writer.Write(cell.Value?.ToString())
-                    writer.Write(vbTab)
-                    writer.Write(" , ")
+
+            ' Write data rows
+            For rowIndex As Integer = 0 To dataGridView.Rows.Count - 1
+                For columnIndex As Integer = 0 To dataGridView.Columns.Count - 1
+                    worksheet.Cells(rowIndex + 2, columnIndex + 1).Value = dataGridView.Rows(rowIndex).Cells(columnIndex).Value
                 Next
-                writer.WriteLine()
             Next
+
+            ' Save the Excel file
+            Using fileStream As New FileStream(filePath, FileMode.Create)
+                package.SaveAs(fileStream)
+            End Using
         End Using
     End Sub
 
