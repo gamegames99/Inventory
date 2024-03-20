@@ -34,11 +34,15 @@ Public Class equip
                 ' Display the sum in TextBox9
                 TextBox9.Text = sum.ToString()
             End Using
-
+            ResizeColumns()
             DataGridView1.DataSource = dt
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+    Private Sub ResizeColumns()
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
     End Sub
     Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
         TextBox6.Text = MonthCalendar1.SelectionRange.Start.ToShortDateString()
@@ -46,6 +50,7 @@ Public Class equip
 
     Private Sub equip_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()
+        ResizeColumns()
         TextBox1.Text = "search keywords.."
     End Sub
 

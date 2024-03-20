@@ -50,6 +50,7 @@ Partial Class stock
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(12, 66)
         DataGridView1.Name = "DataGridView1"
@@ -58,6 +59,7 @@ Partial Class stock
         ' 
         ' TextBox1
         ' 
+        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         TextBox1.Enabled = False
         TextBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox1.Location = New Point(248, 36)
@@ -68,6 +70,7 @@ Partial Class stock
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(73, 36)
@@ -78,6 +81,7 @@ Partial Class stock
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
@@ -91,6 +95,7 @@ Partial Class stock
         ' 
         ' TextBox2
         ' 
+        TextBox2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox2.Location = New Point(227, 485)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(79, 23)
@@ -98,6 +103,7 @@ Partial Class stock
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label2.AutoSize = True
         Label2.Location = New Point(227, 466)
         Label2.Name = "Label2"
@@ -107,6 +113,7 @@ Partial Class stock
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label3.AutoSize = True
         Label3.Location = New Point(26, 466)
         Label3.Name = "Label3"
@@ -116,6 +123,7 @@ Partial Class stock
         ' 
         ' DataGridView2
         ' 
+        DataGridView2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Location = New Point(470, 66)
         DataGridView2.Name = "DataGridView2"
@@ -124,6 +132,7 @@ Partial Class stock
         ' 
         ' Button2
         ' 
+        Button2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
@@ -137,6 +146,7 @@ Partial Class stock
         ' 
         ' TextBox3
         ' 
+        TextBox3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox3.Enabled = False
         TextBox3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox3.Location = New Point(26, 424)
@@ -147,6 +157,7 @@ Partial Class stock
         ' 
         ' TextBox4
         ' 
+        TextBox4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox4.Enabled = False
         TextBox4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox4.Location = New Point(227, 424)
@@ -157,6 +168,7 @@ Partial Class stock
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label4.AutoSize = True
         Label4.Location = New Point(26, 406)
         Label4.Name = "Label4"
@@ -166,6 +178,7 @@ Partial Class stock
         ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label5.AutoSize = True
         Label5.Location = New Point(227, 406)
         Label5.Name = "Label5"
@@ -175,6 +188,7 @@ Partial Class stock
         ' 
         ' TextBox5
         ' 
+        TextBox5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox5.Location = New Point(26, 485)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(183, 23)
@@ -182,6 +196,7 @@ Partial Class stock
         ' 
         ' Button3
         ' 
+        Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
@@ -195,6 +210,7 @@ Partial Class stock
         ' 
         ' TextBox6
         ' 
+        TextBox6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         TextBox6.Location = New Point(589, 424)
         TextBox6.Name = "TextBox6"
         TextBox6.Size = New Size(73, 23)
@@ -202,6 +218,7 @@ Partial Class stock
         ' 
         ' TextBox7
         ' 
+        TextBox7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         TextBox7.Enabled = False
         TextBox7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox7.Location = New Point(470, 424)
@@ -212,6 +229,7 @@ Partial Class stock
         ' 
         ' TextBox8
         ' 
+        TextBox8.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         TextBox8.Enabled = False
         TextBox8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox8.Location = New Point(695, 37)
@@ -222,6 +240,7 @@ Partial Class stock
         ' 
         ' Label6
         ' 
+        Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.Location = New Point(508, 38)
@@ -232,6 +251,7 @@ Partial Class stock
         ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Label7.AutoSize = True
         Label7.Location = New Point(589, 406)
         Label7.Name = "Label7"
@@ -241,6 +261,7 @@ Partial Class stock
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Label8.AutoSize = True
         Label8.Location = New Point(470, 406)
         Label8.Name = "Label8"
@@ -250,6 +271,7 @@ Partial Class stock
         ' 
         ' Button4
         ' 
+        Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button4.FlatStyle = FlatStyle.Flat
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))

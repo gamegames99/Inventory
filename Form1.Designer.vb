@@ -29,26 +29,32 @@ Partial Class Form1
         Label2 = New Label()
         Label3 = New Label()
         PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
+        Label4 = New Label()
+        Panel2 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0)
-        Label1.Location = New Point(181, 32)
+        Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label1.Location = New Point(203, 110)
         Label1.Name = "Label1"
-        Label1.Size = New Size(106, 32)
+        Label1.Size = New Size(116, 32)
         Label1.TabIndex = 0
-        Label1.Text = "test_app"
+        Label1.Text = "test_app1"
         ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.FromArgb(64, 64, 64)
+        Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        Button1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(221, 249)
+        Button1.Location = New Point(218, 354)
         Button1.Name = "Button1"
         Button1.Size = New Size(115, 38)
         Button1.TabIndex = 1
@@ -57,14 +63,14 @@ Partial Class Form1
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(92, 120)
+        TextBox1.Location = New Point(89, 225)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(244, 23)
         TextBox1.TabIndex = 2
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(92, 193)
+        TextBox2.Location = New Point(89, 298)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(244, 23)
         TextBox2.TabIndex = 2
@@ -74,7 +80,8 @@ Partial Class Form1
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        Label2.Location = New Point(92, 96)
+        Label2.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label2.Location = New Point(89, 201)
         Label2.Name = "Label2"
         Label2.Size = New Size(83, 21)
         Label2.TabIndex = 0
@@ -84,7 +91,8 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        Label3.Location = New Point(92, 169)
+        Label3.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label3.Location = New Point(89, 274)
         Label3.Name = "Label3"
         Label3.Size = New Size(79, 21)
         Label3.TabIndex = 0
@@ -92,31 +100,65 @@ Partial Class Form1
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(85, 12)
+        PictureBox1.Location = New Point(89, 88)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(90, 81)
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.DarkGray
+        Panel1.Controls.Add(Label4)
+        Panel1.Dock = DockStyle.Top
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(448, 52)
+        Panel1.TabIndex = 4
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.Black
+        Label4.Location = New Point(3, 9)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(288, 32)
+        Label4.TabIndex = 0
+        Label4.Text = "testing_inventory_system"
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(PictureBox1)
+        Panel2.Controls.Add(Label1)
+        Panel2.Controls.Add(TextBox2)
+        Panel2.Controls.Add(Label2)
+        Panel2.Controls.Add(TextBox1)
+        Panel2.Controls.Add(Label3)
+        Panel2.Dock = DockStyle.Fill
+        Panel2.Location = New Point(0, 0)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(448, 443)
+        Panel2.TabIndex = 5
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(448, 361)
-        Controls.Add(PictureBox1)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
-        Controls.Add(Button1)
-        Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        ClientSize = New Size(448, 443)
+        Controls.Add(Panel1)
+        Controls.Add(Panel2)
         FormBorderStyle = FormBorderStyle.FixedToolWindow
         Name = "Form1"
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
@@ -126,5 +168,8 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel2 As Panel
 
 End Class

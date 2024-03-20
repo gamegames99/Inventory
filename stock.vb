@@ -28,7 +28,7 @@ Public Class stock
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        RC()
         DataGridView2.DataSource = stockTable
     End Sub
     Private Sub updatetable()
@@ -63,27 +63,19 @@ Public Class stock
                 TextBox1.Text = sum.ToString()
                 TextBox8.Text = summ.ToString()
             End Using
-
+            ResizeColumns()
             DataGridView1.DataSource = dt
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Private Sub ResizeColumns()
-        Dim totalWidth As Integer = DataGridView1.Width
-        Dim columnCount As Integer = DataGridView1.Columns.Count
-
-        For Each column As DataGridViewColumn In DataGridView1.Columns
-            column.Width = totalWidth / columnCount
-        Next
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
     End Sub
     Private Sub RC()
-        Dim totalWidth As Integer = DataGridView2.Width
-        Dim columnCount As Integer = DataGridView2.Columns.Count
-
-        For Each column As DataGridViewColumn In DataGridView2.Columns
-            column.Width = totalWidth / columnCount
-        Next
+        DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
     End Sub
     Private Sub stock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()

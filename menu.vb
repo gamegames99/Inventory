@@ -2,17 +2,8 @@
     Private Sub main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
     End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim result = MessageBox.Show("Would you like to exit? Any unsaved changes will be lost", "Confirm Exit",
-                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-        If result = DialogResult.Yes Then
-            Application.Exit()
-        End If
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Me.WindowState = FormWindowState.Minimized
+    Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

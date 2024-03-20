@@ -53,6 +53,7 @@ Partial Class equip
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(12, 12)
         DataGridView1.Name = "DataGridView1"
@@ -61,6 +62,7 @@ Partial Class equip
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         GroupBox1.BackColor = Color.Silver
         GroupBox1.Controls.Add(TextBox9)
         GroupBox1.Controls.Add(Label7)
@@ -215,6 +217,7 @@ Partial Class equip
         ' 
         ' Button2
         ' 
+        Button2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
@@ -228,6 +231,7 @@ Partial Class equip
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
@@ -241,6 +245,7 @@ Partial Class equip
         ' 
         ' Button3
         ' 
+        Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
@@ -254,6 +259,7 @@ Partial Class equip
         ' 
         ' Button4
         ' 
+        Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button4.FlatStyle = FlatStyle.Flat
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
@@ -267,6 +273,7 @@ Partial Class equip
         ' 
         ' TextBox1
         ' 
+        TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox1.Location = New Point(250, 472)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(257, 23)
@@ -274,6 +281,7 @@ Partial Class equip
         ' 
         ' Button5
         ' 
+        Button5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button5.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button5.FlatStyle = FlatStyle.Flat
         Button5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
@@ -287,6 +295,7 @@ Partial Class equip
         ' 
         ' Button6
         ' 
+        Button6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button6.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button6.FlatStyle = FlatStyle.Flat
         Button6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)

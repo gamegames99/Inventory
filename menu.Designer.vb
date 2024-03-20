@@ -25,8 +25,6 @@ Partial Class menu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menu))
         Panel1 = New Panel()
         Label1 = New Label()
-        Button5 = New Button()
-        Button4 = New Button()
         Panel2 = New Panel()
         PictureBox1 = New PictureBox()
         Button3 = New Button()
@@ -40,11 +38,9 @@ Partial Class menu
         ' 
         ' Panel1
         ' 
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.BackColor = Color.Gray
         Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Button5)
-        Panel1.Controls.Add(Button4)
-        Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1284, 40)
@@ -60,40 +56,14 @@ Partial Class menu
         Label1.TabIndex = 0
         Label1.Text = "testing_inventory_system"
         ' 
-        ' Button5
-        ' 
-        Button5.BackColor = Color.White
-        Button5.FlatStyle = FlatStyle.Flat
-        Button5.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button5.ForeColor = Color.Black
-        Button5.Location = New Point(1201, 0)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(43, 40)
-        Button5.TabIndex = 1
-        Button5.Text = "-"
-        Button5.UseVisualStyleBackColor = False
-        ' 
-        ' Button4
-        ' 
-        Button4.BackColor = Color.Red
-        Button4.FlatStyle = FlatStyle.Flat
-        Button4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button4.ForeColor = Color.Black
-        Button4.Location = New Point(1241, 0)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(43, 40)
-        Button4.TabIndex = 0
-        Button4.Text = "X"
-        Button4.UseVisualStyleBackColor = False
-        ' 
         ' Panel2
         ' 
+        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Panel2.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
         Panel2.Controls.Add(PictureBox1)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button2)
         Panel2.Controls.Add(Button1)
-        Panel2.Dock = DockStyle.Left
         Panel2.ForeColor = Color.Blue
         Panel2.Location = New Point(0, 40)
         Panel2.Name = "Panel2"
@@ -152,8 +122,8 @@ Partial Class menu
         ' 
         ' Panel3
         ' 
+        Panel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel3.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(200, 40)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1084, 671)
@@ -164,11 +134,9 @@ Partial Class menu
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1284, 711)
-        ControlBox = False
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        FormBorderStyle = FormBorderStyle.None
         Name = "menu"
         Text = "menu"
         Panel1.ResumeLayout(False)
@@ -184,8 +152,6 @@ Partial Class menu
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button5 As Button
     Friend WithEvents Label1 As Label
 End Class

@@ -22,6 +22,7 @@ Public Class report
                 End Using
                 conn.Close()
             End Using
+            ResizeColumns()
             DataGridView1.DataSource = dt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -29,7 +30,12 @@ Public Class report
     End Sub
     Private Sub report_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()
+        ResizeColumns()
         TextBox1.Text = "search keywords..."
+    End Sub
+    Private Sub ResizeColumns()
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
