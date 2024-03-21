@@ -72,6 +72,7 @@ Public Class equip
                 conn.Open()
                 Using cmd As New SQLiteCommand()
                     cmd.Connection = conn
+                    ' Insert into equipment table
                     cmd.CommandText = "INSERT INTO equipment(eq_serial, eq_name, eq_type, eq_quantity, eq_dop, eq_price) VALUES (@serial, @name, @type, @quantity, @dop, @ep)"
 
                     ' Validate and set @serial parameter
@@ -110,6 +111,27 @@ Public Class equip
 
                     cmd.ExecuteNonQuery()
                 End Using
+                Using cmd As New SQLiteCommand()
+                    cmd.Connection = conn
+                    ' Insert into history table
+                    cmd.CommandText = "INSERT INTO history(Date_added, Item_serial, Item_name, Item_type, Item_quantity, Item_date, Item_price, Action) VALUES (@dateAdded, @serial, @name, @type, @quantity, @dop, @ep, @action)"
+
+                    ' Validate and set @dateAdded parameter
+                    Dim dateAddedParameter As New SQLiteParameter("@dateAdded", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                    cmd.Parameters.Add(dateAddedParameter)
+
+                    ' Set other parameters using the values entered in the equipment form
+                    cmd.Parameters.Add("@serial", DbType.String).Value = TextBox3.Text
+                    cmd.Parameters.Add("@name", DbType.String).Value = TextBox4.Text
+                    cmd.Parameters.Add("@type", DbType.String).Value = TextBox7.Text
+                    cmd.Parameters.Add("@quantity", DbType.Int32).Value = Integer.Parse(TextBox5.Text)
+                    cmd.Parameters.Add("@dop", DbType.String).Value = TextBox6.Text
+                    cmd.Parameters.Add("@ep", DbType.Double).Value = Double.Parse(TextBox8.Text)
+                    cmd.Parameters.Add("@action", DbType.String).Value = "Added Item"
+
+
+                    cmd.ExecuteNonQuery()
+                End Using
             End Using
 
             MsgBox("Saved!")
@@ -122,60 +144,90 @@ Public Class equip
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Try
             If DataGridView1.SelectedRows.Count > 0 Then
-                rd = DataGridView1.SelectedRows(0).Cells("eq_id").Value
+                Dim eqId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("eq_id").Value)
                 Dim result As DialogResult = MessageBox.Show("Are you sure you want to update this record?", "Confirmation",
-                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
                 If result = DialogResult.Yes Then
-                    Using conn As New SQLiteConnection(connectionString)
-                        conn.Open()
-                        Using cmd As New SQLiteCommand()
-                            cmd.Connection = conn
-                            cmd.CommandText = "UPDATE equipment SET eq_id = @eq_id, eq_serial = @serial, eq_name = @name, eq_type = @type, eq_quantity = @quantity, eq_dop = @dop, eq_price = @ep WHERE eq_id = @eq_id"
+                    Dim reason As String = InputBox("Please provide a reason for the update:", "Reason")
 
-                            ' Validate and set @eq_id parameter
-                            Dim eqIdParameter As New SQLiteParameter("@eq_id", rd)
-                            cmd.Parameters.Add(eqIdParameter)
+                    If Not String.IsNullOrWhiteSpace(reason) Then
 
-                            ' Validate and set @serial parameter
-                            Dim serialParameter As New SQLiteParameter("@serial", TextBox3.Text)
-                            cmd.Parameters.Add(serialParameter)
+                        Using conn As New SQLiteConnection(connectionString)
+                            conn.Open()
 
-                            ' Validate and set @name parameter
-                            Dim nameParameter As New SQLiteParameter("@name", TextBox4.Text)
-                            cmd.Parameters.Add(nameParameter)
+                            ' Update equipment table
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "UPDATE equipment SET eq_serial = @serial, eq_name = @name, eq_type = @type, eq_quantity = @quantity, eq_dop = @dop, eq_price = @ep WHERE eq_id = @eq_id"
 
-                            ' Validate and set @type parameter
-                            Dim typeParameter As New SQLiteParameter("@type", TextBox7.Text)
-                            cmd.Parameters.Add(typeParameter)
+                                ' Validate and set @serial parameter
+                                Dim serialParameter As New SQLiteParameter("@serial", TextBox3.Text)
+                                cmd.Parameters.Add(serialParameter)
 
-                            ' Validate and set @quantity parameter
-                            Dim quantityParameter As New SQLiteParameter("@quantity", 0)
-                            If Integer.TryParse(TextBox5.Text, Nothing) Then
-                                quantityParameter.Value = Integer.Parse(TextBox5.Text)
-                            Else
-                                Throw New Exception("Invalid value for Quantity")
-                            End If
-                            cmd.Parameters.Add(quantityParameter)
+                                ' Validate and set @name parameter
+                                Dim nameParameter As New SQLiteParameter("@name", TextBox4.Text)
+                                cmd.Parameters.Add(nameParameter)
 
-                            ' Validate and set @dop parameter
-                            Dim dopParameter As New SQLiteParameter("@dop", TextBox6.Text)
-                            cmd.Parameters.Add(dopParameter)
+                                ' Validate and set @type parameter
+                                Dim typeParameter As New SQLiteParameter("@type", TextBox7.Text)
+                                cmd.Parameters.Add(typeParameter)
 
-                            ' Validate and set @ep parameter
-                            Dim epParameter As New SQLiteParameter("@ep", 0)
-                            If Integer.TryParse(TextBox8.Text, Nothing) Then
-                                epParameter.Value = Integer.Parse(TextBox8.Text)
-                            Else
-                                Throw New Exception("Invalid value for Unit Price.")
-                            End If
-                            cmd.Parameters.Add(epParameter)
+                                ' Validate and set @quantity parameter
+                                Dim quantityParameter As New SQLiteParameter("@quantity", 0)
+                                If Integer.TryParse(TextBox5.Text, Nothing) Then
+                                    quantityParameter.Value = Integer.Parse(TextBox5.Text)
+                                Else
+                                    Throw New Exception("Invalid value for Quantity.")
+                                End If
+                                cmd.Parameters.Add(quantityParameter)
 
-                            cmd.ExecuteNonQuery()
+                                ' Validate and set @dop parameter
+                                Dim dopParameter As New SQLiteParameter("@dop", TextBox6.Text)
+                                cmd.Parameters.Add(dopParameter)
+
+                                ' Validate and set @ep parameter
+                                Dim epParameter As New SQLiteParameter("@ep", 0)
+                                If Double.TryParse(TextBox8.Text, Nothing) Then
+                                    epParameter.Value = Double.Parse(TextBox8.Text)
+                                Else
+                                    Throw New Exception("Invalid value for Unit Price.")
+                                End If
+                                cmd.Parameters.Add(epParameter)
+
+                                ' Set @eq_id parameter
+                                cmd.Parameters.Add("@eq_id", DbType.Int32).Value = eqId
+
+                                cmd.ExecuteNonQuery()
+                            End Using
+
+                            ' Insert into history table
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "INSERT INTO history (Date_added, Item_serial, Item_name, Item_type, Item_quantity, Item_date, Item_price, Action, Reason) VALUES (@dateAdded, @serial, @name, @type, @quantity, @dop, @ep, @action, @reason)"
+
+                                ' Validate and set @dateAdded parameter
+                                Dim dateAddedParameter As New SQLiteParameter("@dateAdded", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                                cmd.Parameters.Add(dateAddedParameter)
+
+                                ' Set other parameters using the values entered in the equipment form
+                                cmd.Parameters.Add("@serial", DbType.String).Value = TextBox3.Text
+                                cmd.Parameters.Add("@name", DbType.String).Value = TextBox4.Text
+                                cmd.Parameters.Add("@type", DbType.String).Value = TextBox7.Text
+                                cmd.Parameters.Add("@quantity", DbType.Int32).Value = Integer.Parse(TextBox5.Text)
+                                cmd.Parameters.Add("@dop", DbType.String).Value = TextBox6.Text
+                                cmd.Parameters.Add("@ep", DbType.Double).Value = Double.Parse(TextBox8.Text)
+                                cmd.Parameters.Add("@action", DbType.String).Value = "Updated" ' Set the action type
+                                cmd.Parameters.Add("@reason", DbType.String).Value = reason ' Set the reason for update
+
+                                cmd.ExecuteNonQuery()
+                            End Using
                         End Using
-                    End Using
-
-                    MsgBox("Updated!")
-                    updatetable()
+                        MsgBox("Updated!")
+                        updatetable()
+                    Else
+                        MsgBox("Reason for updating is required.")
+                    End If
                 End If
             Else
                 MsgBox("No row selected.")
@@ -187,20 +239,52 @@ Public Class equip
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
             If DataGridView1.SelectedRows.Count > 0 Then
-                rd = DataGridView1.SelectedRows(0).Cells("eq_id").Value
+                Dim eqId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("eq_id").Value)
                 Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Confirmation",
-                                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If result = DialogResult.Yes Then
-                    Dim conn As New SQLiteConnection(connectionString)
-                    conn.Open()
-                    cmd.Connection = conn
-                    cmd.CommandText = "delete from equipment where eq_id = @eq_id"
-                    cmd.Parameters.AddWithValue("@eq_id", rd)
-                    cmd.ExecuteNonQuery()
-                    MsgBox("Deleted!")
-                    conn.Close()
-                    dt.Clear()
-                    updatetable()
+                    Dim reason As String = InputBox("Please provide a reason for deletion:", "Reason")
+
+                    If Not String.IsNullOrWhiteSpace(reason) Then
+                        Using conn As New SQLiteConnection(connectionString)
+                            conn.Open()
+
+                            ' Delete from equipment table
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "DELETE FROM equipment WHERE eq_id = @eq_id"
+                                cmd.Parameters.AddWithValue("@eq_id", eqId)
+                                cmd.ExecuteNonQuery()
+                            End Using
+
+                            ' Insert into history table
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "INSERT INTO history (Date_added, Item_serial, Item_name, Item_type, Item_quantity, Item_date, Item_price, Reason, Action) VALUES (@dateAdded, @serial, @name, @type, @quantity, @dop, @ep, @reason, @action)"
+
+                                ' Validate and set @dateAdded parameter
+                                Dim dateAddedParameter As New SQLiteParameter("@dateAdded", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                                cmd.Parameters.Add(dateAddedParameter)
+
+                                ' Set other parameters using the values from the equipment table
+                                cmd.Parameters.Add("@serial", DbType.String).Value = DataGridView1.SelectedRows(0).Cells("eq_serial").Value.ToString()
+                                cmd.Parameters.Add("@name", DbType.String).Value = DataGridView1.SelectedRows(0).Cells("eq_name").Value.ToString()
+                                cmd.Parameters.Add("@type", DbType.String).Value = DataGridView1.SelectedRows(0).Cells("eq_type").Value.ToString()
+                                cmd.Parameters.Add("@quantity", DbType.Int32).Value = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("eq_quantity").Value)
+                                cmd.Parameters.Add("@dop", DbType.String).Value = DataGridView1.SelectedRows(0).Cells("eq_dop").Value.ToString()
+                                cmd.Parameters.Add("@ep", DbType.Double).Value = Convert.ToDouble(DataGridView1.SelectedRows(0).Cells("eq_price").Value)
+                                cmd.Parameters.Add("@action", DbType.String).Value = "Deleted"
+                                cmd.Parameters.Add("@reason", DbType.String).Value = reason
+
+                                cmd.ExecuteNonQuery()
+                            End Using
+                        End Using
+                        MsgBox("Deleted!")
+                        dt.Clear()
+                        updatetable()
+                    Else
+                        MsgBox("Reason for deletion is required.")
+                    End If
                 End If
             Else
                 MsgBox("No row selected.")

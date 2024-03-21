@@ -11,6 +11,24 @@ Public Class report
     Dim cmd As New SQLiteCommand
     Dim dt As New DataTable
     Dim bp As Bitmap
+
+    Private Sub historytable()
+        Dim hdt As New DataTable()
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Using cmd As New SQLiteCommand("SELECT * FROM history", conn)
+                    Using sdr As SQLiteDataReader = cmd.ExecuteReader()
+                        hdt.Load(sdr)
+                    End Using
+                End Using
+                conn.Close()
+            End Using
+            DataGridView2.DataSource = hdt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub updatetable()
         Try
             Using conn As New SQLiteConnection(connectionString)
@@ -30,6 +48,7 @@ Public Class report
     End Sub
     Private Sub report_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()
+        historytable()
         ResizeColumns()
         TextBox1.Text = "search keywords..."
     End Sub
@@ -152,5 +171,15 @@ Public Class report
                 writer.WriteLine(item.ToString())
             Next
         End Using
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx"
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            filePath = saveFileDialog.FileName
+            SaveDataToExcel(DataGridView2)
+            MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class

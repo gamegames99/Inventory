@@ -44,40 +44,44 @@ Partial Class stock
         Label7 = New Label()
         Label8 = New Label()
         Button4 = New Button()
+        GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' DataGridView1
         ' 
-        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(12, 66)
+        DataGridView1.Location = New Point(6, 54)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.Size = New Size(424, 326)
         DataGridView1.TabIndex = 0
         ' 
         ' TextBox1
         ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox1.Enabled = False
         TextBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(248, 36)
+        TextBox1.Location = New Point(183, 25)
         TextBox1.Name = "TextBox1"
         TextBox1.ReadOnly = True
-        TextBox1.Size = New Size(138, 23)
+        TextBox1.Size = New Size(226, 23)
         TextBox1.TabIndex = 1
         ' 
         ' Label1
         ' 
-        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(73, 36)
+        Label1.Location = New Point(45, 26)
         Label1.Name = "Label1"
-        Label1.Size = New Size(169, 17)
+        Label1.Size = New Size(132, 17)
         Label1.TabIndex = 2
-        Label1.Text = "Stock Quantity (Inbound) :"
+        Label1.Text = "Quantity (Inbound) :"
         ' 
         ' Button1
         ' 
@@ -86,7 +90,7 @@ Partial Class stock
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(312, 478)
+        Button1.Location = New Point(306, 466)
         Button1.Name = "Button1"
         Button1.Size = New Size(124, 33)
         Button1.TabIndex = 3
@@ -96,7 +100,7 @@ Partial Class stock
         ' TextBox2
         ' 
         TextBox2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        TextBox2.Location = New Point(227, 485)
+        TextBox2.Location = New Point(211, 467)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(79, 23)
         TextBox2.TabIndex = 4
@@ -105,7 +109,7 @@ Partial Class stock
         ' 
         Label2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label2.AutoSize = True
-        Label2.Location = New Point(227, 466)
+        Label2.Location = New Point(211, 448)
         Label2.Name = "Label2"
         Label2.Size = New Size(53, 15)
         Label2.TabIndex = 5
@@ -115,19 +119,19 @@ Partial Class stock
         ' 
         Label3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label3.AutoSize = True
-        Label3.Location = New Point(26, 466)
+        Label3.Location = New Point(10, 448)
         Label3.Name = "Label3"
-        Label3.Size = New Size(133, 15)
+        Label3.Size = New Size(134, 15)
         Label3.TabIndex = 7
         Label3.Text = "Department / Personnel"
         ' 
         ' DataGridView2
         ' 
-        DataGridView2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        DataGridView2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Location = New Point(470, 66)
+        DataGridView2.Location = New Point(6, 54)
         DataGridView2.Name = "DataGridView2"
-        DataGridView2.Size = New Size(412, 326)
+        DataGridView2.Size = New Size(414, 326)
         DataGridView2.TabIndex = 8
         ' 
         ' Button2
@@ -137,7 +141,7 @@ Partial Class stock
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.DeepSkyBlue
-        Button2.Location = New Point(704, 480)
+        Button2.Location = New Point(248, 461)
         Button2.Name = "Button2"
         Button2.Size = New Size(165, 33)
         Button2.TabIndex = 9
@@ -149,7 +153,7 @@ Partial Class stock
         TextBox3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox3.Enabled = False
         TextBox3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox3.Location = New Point(26, 424)
+        TextBox3.Location = New Point(10, 406)
         TextBox3.Name = "TextBox3"
         TextBox3.ReadOnly = True
         TextBox3.Size = New Size(183, 23)
@@ -160,7 +164,7 @@ Partial Class stock
         TextBox4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox4.Enabled = False
         TextBox4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox4.Location = New Point(227, 424)
+        TextBox4.Location = New Point(211, 406)
         TextBox4.Name = "TextBox4"
         TextBox4.ReadOnly = True
         TextBox4.Size = New Size(188, 23)
@@ -170,9 +174,9 @@ Partial Class stock
         ' 
         Label4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label4.AutoSize = True
-        Label4.Location = New Point(26, 406)
+        Label4.Location = New Point(10, 388)
         Label4.Name = "Label4"
-        Label4.Size = New Size(66, 15)
+        Label4.Size = New Size(67, 15)
         Label4.TabIndex = 5
         Label4.Text = "Item Name"
         ' 
@@ -180,16 +184,16 @@ Partial Class stock
         ' 
         Label5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label5.AutoSize = True
-        Label5.Location = New Point(227, 406)
+        Label5.Location = New Point(211, 388)
         Label5.Name = "Label5"
-        Label5.Size = New Size(58, 15)
+        Label5.Size = New Size(60, 15)
         Label5.TabIndex = 5
         Label5.Text = "Item Type"
         ' 
         ' TextBox5
         ' 
         TextBox5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        TextBox5.Location = New Point(26, 485)
+        TextBox5.Location = New Point(10, 467)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(183, 23)
         TextBox5.TabIndex = 4
@@ -201,7 +205,7 @@ Partial Class stock
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button3.ForeColor = Color.DeepSkyBlue
-        Button3.Location = New Point(695, 417)
+        Button3.Location = New Point(239, 400)
         Button3.Name = "Button3"
         Button3.Size = New Size(84, 33)
         Button3.TabIndex = 9
@@ -211,7 +215,7 @@ Partial Class stock
         ' TextBox6
         ' 
         TextBox6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        TextBox6.Location = New Point(589, 424)
+        TextBox6.Location = New Point(133, 407)
         TextBox6.Name = "TextBox6"
         TextBox6.Size = New Size(73, 23)
         TextBox6.TabIndex = 11
@@ -221,7 +225,7 @@ Partial Class stock
         TextBox7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         TextBox7.Enabled = False
         TextBox7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox7.Location = New Point(470, 424)
+        TextBox7.Location = New Point(14, 407)
         TextBox7.Name = "TextBox7"
         TextBox7.ReadOnly = True
         TextBox7.Size = New Size(94, 23)
@@ -232,10 +236,10 @@ Partial Class stock
         TextBox8.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         TextBox8.Enabled = False
         TextBox8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox8.Location = New Point(695, 37)
+        TextBox8.Location = New Point(203, 26)
         TextBox8.Name = "TextBox8"
         TextBox8.ReadOnly = True
-        TextBox8.Size = New Size(128, 23)
+        TextBox8.Size = New Size(210, 23)
         TextBox8.TabIndex = 12
         ' 
         ' Label6
@@ -243,17 +247,17 @@ Partial Class stock
         Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(508, 38)
+        Label6.Location = New Point(43, 26)
         Label6.Name = "Label6"
-        Label6.Size = New Size(180, 17)
+        Label6.Size = New Size(143, 17)
         Label6.TabIndex = 2
-        Label6.Text = "Stock Quantity (Outbound) :"
+        Label6.Text = "Quantity (Outbound) :"
         ' 
         ' Label7
         ' 
         Label7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Label7.AutoSize = True
-        Label7.Location = New Point(589, 406)
+        Label7.Location = New Point(133, 389)
         Label7.Name = "Label7"
         Label7.Size = New Size(53, 15)
         Label7.TabIndex = 5
@@ -263,9 +267,9 @@ Partial Class stock
         ' 
         Label8.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Label8.AutoSize = True
-        Label8.Location = New Point(470, 406)
+        Label8.Location = New Point(14, 389)
         Label8.Name = "Label8"
-        Label8.Size = New Size(81, 15)
+        Label8.Size = New Size(83, 15)
         Label8.TabIndex = 13
         Label8.Text = "Item Identifier"
         ' 
@@ -276,46 +280,76 @@ Partial Class stock
         Button4.FlatStyle = FlatStyle.Flat
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button4.ForeColor = Color.DeepSkyBlue
-        Button4.Location = New Point(785, 417)
+        Button4.Location = New Point(329, 400)
         Button4.Name = "Button4"
         Button4.Size = New Size(84, 33)
         Button4.TabIndex = 9
         Button4.Text = "Delete"
         Button4.UseVisualStyleBackColor = False
         ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        GroupBox1.BackColor = Color.White
+        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(DataGridView1)
+        GroupBox1.Controls.Add(Button1)
+        GroupBox1.Controls.Add(TextBox3)
+        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(TextBox5)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(Label4)
+        GroupBox1.Controls.Add(TextBox4)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(Label5)
+        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        GroupBox1.Location = New Point(12, 12)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(436, 510)
+        GroupBox1.TabIndex = 14
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Stock-In"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        GroupBox2.BackColor = Color.White
+        GroupBox2.Controls.Add(Label6)
+        GroupBox2.Controls.Add(TextBox8)
+        GroupBox2.Controls.Add(Label8)
+        GroupBox2.Controls.Add(TextBox7)
+        GroupBox2.Controls.Add(DataGridView2)
+        GroupBox2.Controls.Add(TextBox6)
+        GroupBox2.Controls.Add(Button3)
+        GroupBox2.Controls.Add(Label7)
+        GroupBox2.Controls.Add(Button4)
+        GroupBox2.Controls.Add(Button2)
+        GroupBox2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        GroupBox2.Location = New Point(463, 12)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(426, 510)
+        GroupBox2.TabIndex = 15
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Stock-Out"
+        ' 
         ' stock
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(896, 534)
-        Controls.Add(Label8)
-        Controls.Add(TextBox8)
-        Controls.Add(TextBox7)
-        Controls.Add(TextBox6)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox3)
-        Controls.Add(Button3)
-        Controls.Add(Button4)
-        Controls.Add(Button2)
-        Controls.Add(DataGridView2)
-        Controls.Add(Label3)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(Label7)
-        Controls.Add(Label2)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox2)
-        Controls.Add(Button1)
-        Controls.Add(Label6)
-        Controls.Add(Label1)
-        Controls.Add(TextBox1)
-        Controls.Add(DataGridView1)
+        BackColor = Color.White
+        ClientSize = New Size(901, 534)
+        Controls.Add(GroupBox1)
+        Controls.Add(GroupBox2)
         Name = "stock"
         Text = "Manage Stock"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
@@ -340,4 +374,6 @@ Partial Class stock
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

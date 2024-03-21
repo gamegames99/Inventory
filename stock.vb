@@ -144,7 +144,7 @@ Public Class stock
                         newtable()
                     End If
                 Else
-                    Throw New Exception("Invalid value for Quantity.")
+                    Throw New Exception("Invalid value")
                 End If
             Else
                 MsgBox("No row selected.")
