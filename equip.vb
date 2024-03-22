@@ -61,6 +61,7 @@ Public Class equip
                     txt.text = ""
                 End If
             Next
+            updatetable()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

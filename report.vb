@@ -24,6 +24,7 @@ Public Class report
                 End Using
                 conn.Close()
             End Using
+            RC()
             DataGridView2.DataSource = hdt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -50,7 +51,15 @@ Public Class report
         updatetable()
         historytable()
         ResizeColumns()
+        RC()
         TextBox1.Text = "search keywords..."
+    End Sub
+    Private Sub RC()
+        Dim desiredWidth As Integer = 150 ' Set the desired width for the columns
+
+        For Each column As DataGridViewColumn In DataGridView2.Columns
+            column.Width = desiredWidth
+        Next
     End Sub
     Private Sub ResizeColumns()
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
