@@ -22,6 +22,7 @@ Partial Class menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menu))
         Panel1 = New Panel()
         Label1 = New Label()
@@ -31,6 +32,9 @@ Partial Class menu
         Button2 = New Button()
         Button1 = New Button()
         Panel3 = New Panel()
+        ProgressBar1 = New ProgressBar()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
+        Timer1 = New Timer(components)
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -40,6 +44,7 @@ Partial Class menu
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.BackColor = Color.Gray
+        Panel1.Controls.Add(ProgressBar1)
         Panel1.Controls.Add(Label1)
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
@@ -52,9 +57,9 @@ Partial Class menu
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(3, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(288, 32)
+        Label1.Size = New Size(286, 32)
         Label1.TabIndex = 0
-        Label1.Text = "testing_inventory_system"
+        Label1.Text = "Project Inventory System"
         ' 
         ' Panel2
         ' 
@@ -129,6 +134,17 @@ Partial Class menu
         Panel3.Size = New Size(1084, 671)
         Panel3.TabIndex = 2
         ' 
+        ' ProgressBar1
+        ' 
+        ProgressBar1.Anchor = AnchorStyles.Top
+        ProgressBar1.Location = New Point(823, 9)
+        ProgressBar1.Name = "ProgressBar1"
+        ProgressBar1.Size = New Size(449, 23)
+        ProgressBar1.TabIndex = 0
+        ' 
+        ' BackgroundWorker1
+        ' 
+        ' 
         ' menu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -154,4 +170,7 @@ Partial Class menu
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Timer1 As Timer
 End Class

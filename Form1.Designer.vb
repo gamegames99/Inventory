@@ -44,9 +44,9 @@ Partial Class Form1
         Label1.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Label1.Location = New Point(203, 110)
         Label1.Name = "Label1"
-        Label1.Size = New Size(116, 32)
+        Label1.Size = New Size(179, 32)
         Label1.TabIndex = 0
-        Label1.Text = "test_app1"
+        Label1.Text = "Welcome back!"
         ' 
         ' Button1
         ' 
@@ -123,9 +123,9 @@ Partial Class Form1
         Label4.ForeColor = Color.Black
         Label4.Location = New Point(3, 9)
         Label4.Name = "Label4"
-        Label4.Size = New Size(288, 32)
+        Label4.Size = New Size(203, 32)
         Label4.TabIndex = 0
-        Label4.Text = "testing_inventory_system"
+        Label4.Text = "Inventory System"
         ' 
         ' Panel2
         ' 
@@ -152,7 +152,6 @@ Partial Class Form1
         Controls.Add(Panel2)
         FormBorderStyle = FormBorderStyle.FixedToolWindow
         Name = "Form1"
-        Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

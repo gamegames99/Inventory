@@ -307,6 +307,7 @@ Partial Class equip
         ' TextBox1
         ' 
         TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Location = New Point(220, 462)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(245, 23)

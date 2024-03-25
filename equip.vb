@@ -1,6 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 Imports System.Data.SQLite
 Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class equip
     Dim databasePath As String = IO.Path.Combine(Application.StartupPath, "Data\supply.db")
     Dim connectionString As String = "Data Source=" & databasePath & ";Version=3;"

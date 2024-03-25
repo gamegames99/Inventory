@@ -52,5 +52,3 @@ C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\Microsof
 C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
-C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
