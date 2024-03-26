@@ -47,21 +47,20 @@ Partial Class report
         ' 
         ' DataGridView1
         ' 
-        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(6, 22)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(565, 456)
+        DataGridView1.Size = New Size(650, 165)
         DataGridView1.TabIndex = 1
         ' 
         ' Button1
         ' 
-        Button1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(6, 496)
+        Button1.Location = New Point(6, 205)
         Button1.Name = "Button1"
         Button1.Size = New Size(88, 30)
         Button1.TabIndex = 2
@@ -70,12 +69,11 @@ Partial Class report
         ' 
         ' Button2
         ' 
-        Button2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
-        Button2.Location = New Point(100, 496)
+        Button2.Location = New Point(100, 205)
         Button2.Name = "Button2"
         Button2.Size = New Size(91, 30)
         Button2.TabIndex = 2
@@ -84,12 +82,11 @@ Partial Class report
         ' 
         ' Button3
         ' 
-        Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
-        Button3.Location = New Point(197, 497)
+        Button3.Location = New Point(197, 206)
         Button3.Name = "Button3"
         Button3.Size = New Size(91, 30)
         Button3.TabIndex = 2
@@ -98,12 +95,11 @@ Partial Class report
         ' 
         ' Button4
         ' 
-        Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button4.FlatStyle = FlatStyle.Flat
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button4.ForeColor = Color.DeepSkyBlue
-        Button4.Location = New Point(479, 496)
+        Button4.Location = New Point(559, 204)
         Button4.Name = "Button4"
         Button4.Size = New Size(87, 30)
         Button4.TabIndex = 2
@@ -112,10 +108,9 @@ Partial Class report
         ' 
         ' TextBox1
         ' 
-        TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        TextBox1.Location = New Point(311, 502)
+        TextBox1.Location = New Point(350, 210)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(149, 23)
+        TextBox1.Size = New Size(203, 23)
         TextBox1.TabIndex = 3
         ' 
         ' PrintPreviewDialog1
@@ -140,17 +135,17 @@ Partial Class report
         ListBox1.ItemHeight = 17
         ListBox1.Location = New Point(6, 22)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(449, 140)
+        ListBox1.Size = New Size(364, 174)
         ListBox1.TabIndex = 4
         ' 
         ' Button5
         ' 
-        Button5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        Button5.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button5.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button5.FlatStyle = FlatStyle.Flat
         Button5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button5.ForeColor = Color.DeepSkyBlue
-        Button5.Location = New Point(363, 168)
+        Button5.Location = New Point(278, 209)
         Button5.Name = "Button5"
         Button5.Size = New Size(92, 30)
         Button5.TabIndex = 5
@@ -163,19 +158,19 @@ Partial Class report
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Location = New Point(6, 22)
         DataGridView2.Name = "DataGridView2"
-        DataGridView2.Size = New Size(449, 244)
+        DataGridView2.Size = New Size(1032, 221)
         DataGridView2.TabIndex = 6
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         GroupBox1.BackColor = Color.White
         GroupBox1.Controls.Add(Button5)
         GroupBox1.Controls.Add(ListBox1)
         GroupBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox1.Location = New Point(595, 344)
+        GroupBox1.Location = New Point(680, 12)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(461, 213)
+        GroupBox1.Size = New Size(376, 254)
         GroupBox1.TabIndex = 7
         GroupBox1.TabStop = False
         GroupBox1.Text = "Data Info"
@@ -187,9 +182,9 @@ Partial Class report
         GroupBox2.Controls.Add(DataGridView2)
         GroupBox2.Controls.Add(Button6)
         GroupBox2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        GroupBox2.Location = New Point(595, 12)
+        GroupBox2.Location = New Point(12, 272)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(461, 326)
+        GroupBox2.Size = New Size(1044, 285)
         GroupBox2.TabIndex = 8
         GroupBox2.TabStop = False
         GroupBox2.Text = "History"
@@ -201,7 +196,7 @@ Partial Class report
         Button6.FlatStyle = FlatStyle.Flat
         Button6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button6.ForeColor = Color.DeepSkyBlue
-        Button6.Location = New Point(363, 272)
+        Button6.Location = New Point(946, 249)
         Button6.Name = "Button6"
         Button6.Size = New Size(92, 30)
         Button6.TabIndex = 2
@@ -210,7 +205,7 @@ Partial Class report
         ' 
         ' GroupBox3
         ' 
-        GroupBox3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        GroupBox3.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         GroupBox3.BackColor = Color.White
         GroupBox3.Controls.Add(DataGridView1)
         GroupBox3.Controls.Add(Button1)
@@ -221,7 +216,7 @@ Partial Class report
         GroupBox3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         GroupBox3.Location = New Point(12, 12)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(577, 545)
+        GroupBox3.Size = New Size(662, 254)
         GroupBox3.TabIndex = 9
         GroupBox3.TabStop = False
         GroupBox3.Text = "Item Information"

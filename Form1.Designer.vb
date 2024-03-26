@@ -41,7 +41,7 @@ Partial Class Form1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label1.ForeColor = Color.Black
         Label1.Location = New Point(203, 110)
         Label1.Name = "Label1"
         Label1.Size = New Size(179, 32)
@@ -80,7 +80,7 @@ Partial Class Form1
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        Label2.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label2.ForeColor = Color.Black
         Label2.Location = New Point(89, 201)
         Label2.Name = "Label2"
         Label2.Size = New Size(83, 21)
@@ -91,7 +91,7 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        Label3.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label3.ForeColor = Color.Black
         Label3.Location = New Point(89, 274)
         Label3.Name = "Label3"
         Label3.Size = New Size(79, 21)
@@ -108,7 +108,7 @@ Partial Class Form1
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.DarkGray
+        Panel1.BackColor = Color.Gray
         Panel1.Controls.Add(Label4)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
@@ -120,7 +120,7 @@ Partial Class Form1
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.Black
+        Label4.ForeColor = Color.DeepSkyBlue
         Label4.Location = New Point(3, 9)
         Label4.Name = "Label4"
         Label4.Size = New Size(203, 32)

@@ -25,6 +25,7 @@ Partial Class menu
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menu))
         Panel1 = New Panel()
+        ProgressBar1 = New ProgressBar()
         Label1 = New Label()
         Panel2 = New Panel()
         PictureBox1 = New PictureBox()
@@ -32,7 +33,6 @@ Partial Class menu
         Button2 = New Button()
         Button1 = New Button()
         Panel3 = New Panel()
-        ProgressBar1 = New ProgressBar()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         Timer1 = New Timer(components)
         Panel1.SuspendLayout()
@@ -51,10 +51,19 @@ Partial Class menu
         Panel1.Size = New Size(1284, 40)
         Panel1.TabIndex = 0
         ' 
+        ' ProgressBar1
+        ' 
+        ProgressBar1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        ProgressBar1.Location = New Point(823, 9)
+        ProgressBar1.Name = "ProgressBar1"
+        ProgressBar1.Size = New Size(449, 23)
+        ProgressBar1.TabIndex = 0
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.DeepSkyBlue
         Label1.Location = New Point(3, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(286, 32)
@@ -133,14 +142,6 @@ Partial Class menu
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1084, 671)
         Panel3.TabIndex = 2
-        ' 
-        ' ProgressBar1
-        ' 
-        ProgressBar1.Anchor = AnchorStyles.Top
-        ProgressBar1.Location = New Point(823, 9)
-        ProgressBar1.Name = "ProgressBar1"
-        ProgressBar1.Size = New Size(449, 23)
-        ProgressBar1.TabIndex = 0
         ' 
         ' BackgroundWorker1
         ' 
