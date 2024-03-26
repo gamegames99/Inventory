@@ -108,12 +108,12 @@ Partial Class Form1
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.Gray
+        Panel1.BackColor = Color.DimGray
         Panel1.Controls.Add(Label4)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(448, 52)
+        Panel1.Size = New Size(448, 51)
         Panel1.TabIndex = 4
         ' 
         ' Label4

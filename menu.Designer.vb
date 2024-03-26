@@ -43,7 +43,7 @@ Partial Class menu
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.BackColor = Color.Gray
+        Panel1.BackColor = Color.DimGray
         Panel1.Controls.Add(ProgressBar1)
         Panel1.Controls.Add(Label1)
         Panel1.Location = New Point(0, 0)
@@ -98,6 +98,8 @@ Partial Class menu
         ' Button3
         ' 
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button3.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.MouseOverBackColor = Color.White
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
@@ -111,6 +113,8 @@ Partial Class menu
         ' Button2
         ' 
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatAppearance.MouseOverBackColor = Color.White
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
@@ -124,6 +128,8 @@ Partial Class menu
         ' Button1
         ' 
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatAppearance.MouseOverBackColor = Color.White
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button1.ForeColor = Color.DeepSkyBlue
@@ -137,25 +143,23 @@ Partial Class menu
         ' Panel3
         ' 
         Panel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel3.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        Panel3.BackColor = Color.White
         Panel3.Location = New Point(200, 40)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1084, 671)
         Panel3.TabIndex = 2
         ' 
-        ' BackgroundWorker1
-        ' 
-        ' 
         ' menu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.Control
         ClientSize = New Size(1284, 711)
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Name = "menu"
-        Text = "menu"
+        Text = "Menu"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
