@@ -114,7 +114,7 @@ Public Class stock
                 Dim quantity As Integer = 0
 
                 If Integer.TryParse(TextBox2.Text, quantity) Then
-                    Dim result As DialogResult = MessageBox.Show("Are you sure you want to transfer?", "Confirmation",
+                    Dim result As DialogResult = MessageBox.Show("The item will be sent to :" + TextBox5.Text + ". Confirm? Y/N", "Confirmation",
                                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     If result = DialogResult.Yes Then
                         Using conn As New SQLiteConnection(connectionString)
@@ -167,22 +167,18 @@ Public Class stock
                     If Integer.TryParse(TextBox6.Text, newQuantity) Then
                         Dim difference As Integer = 0
                         Dim equipmentId As Integer = Convert.ToInt32(selectedRow.Cells("identifier").Value)
+                        Dim currentQuantity As Integer = Convert.ToInt32(selectedRow.Cells("quantity").Value)
+
+                        If newQuantity > currentQuantity Then
+                            MsgBox("The quantity to be returned is higher than the current quantity.", MessageBoxIcon.Error)
+                            Return
+                        End If
 
                         Using conn As New SQLiteConnection(connectionString)
                             conn.Open()
 
-                            ' Retrieve the old quantity from the stock table
-                            Using oldQuantityCmd As New SQLiteCommand("SELECT quantity FROM stock WHERE SID = @stockId", conn)
-                                oldQuantityCmd.Parameters.AddWithValue("@stockId", stockId)
-                                Dim oldQuantityResult As Object = oldQuantityCmd.ExecuteScalar()
-
-                                If oldQuantityResult IsNot Nothing AndAlso oldQuantityResult IsNot DBNull.Value Then
-                                    Dim oldQuantity As Integer = Convert.ToInt32(oldQuantityResult)
-                                    difference = oldQuantity - newQuantity
-                                Else
-                                    Throw New Exception("Failed to retrieve old quantity.")
-                                End If
-                            End Using
+                            ' Calculate the difference between the old and new quantity
+                            difference = currentQuantity - newQuantity
 
                             ' Update the quantity in the stock table
                             Using updateStockCmd As New SQLiteCommand("UPDATE stock SET quantity = @newQuantity WHERE SID = @stockId", conn)
@@ -225,7 +221,7 @@ Public Class stock
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MessageBoxIcon.Error)
         End Try
     End Sub
     Private filePath As String
@@ -290,5 +286,9 @@ Public Class stock
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub TextBox6_Click(sender As Object, e As EventArgs) Handles TextBox6.Click
+        TextBox6.Text = ""
     End Sub
 End Class

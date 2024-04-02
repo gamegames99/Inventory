@@ -204,7 +204,7 @@ Partial Class stock
         ' 
         ' Button3
         ' 
-        Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button3.FlatAppearance.BorderSize = 0
         Button3.FlatAppearance.MouseOverBackColor = Color.White
@@ -220,15 +220,17 @@ Partial Class stock
         ' 
         ' TextBox6
         ' 
-        TextBox6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        TextBox6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        TextBox6.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         TextBox6.Location = New Point(122, 410)
         TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(111, 23)
+        TextBox6.Size = New Size(111, 22)
         TextBox6.TabIndex = 11
+        TextBox6.Text = "Enter new amount"
         ' 
         ' TextBox7
         ' 
-        TextBox7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        TextBox7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox7.Enabled = False
         TextBox7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox7.Location = New Point(6, 410)
@@ -261,7 +263,7 @@ Partial Class stock
         ' 
         ' Label7
         ' 
-        Label7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        Label7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label7.AutoSize = True
         Label7.Location = New Point(122, 392)
         Label7.Name = "Label7"
@@ -271,7 +273,7 @@ Partial Class stock
         ' 
         ' Label8
         ' 
-        Label8.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        Label8.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Label8.AutoSize = True
         Label8.Location = New Point(6, 392)
         Label8.Name = "Label8"
