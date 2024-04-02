@@ -51,16 +51,18 @@ Partial Class report
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(6, 22)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(650, 165)
+        DataGridView1.Size = New Size(650, 174)
         DataGridView1.TabIndex = 1
         ' 
         ' Button1
         ' 
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button1.FlatStyle = FlatStyle.Flat
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatAppearance.MouseOverBackColor = Color.White
+        Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(6, 205)
+        Button1.Location = New Point(6, 218)
         Button1.Name = "Button1"
         Button1.Size = New Size(88, 30)
         Button1.TabIndex = 2
@@ -70,10 +72,12 @@ Partial Class report
         ' Button2
         ' 
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button2.FlatStyle = FlatStyle.Flat
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatAppearance.MouseOverBackColor = Color.White
+        Button2.FlatStyle = FlatStyle.Popup
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
-        Button2.Location = New Point(100, 205)
+        Button2.Location = New Point(100, 218)
         Button2.Name = "Button2"
         Button2.Size = New Size(91, 30)
         Button2.TabIndex = 2
@@ -83,10 +87,12 @@ Partial Class report
         ' Button3
         ' 
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button3.FlatStyle = FlatStyle.Flat
+        Button3.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.MouseOverBackColor = Color.White
+        Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
-        Button3.Location = New Point(197, 206)
+        Button3.Location = New Point(197, 218)
         Button3.Name = "Button3"
         Button3.Size = New Size(91, 30)
         Button3.TabIndex = 2
@@ -96,10 +102,12 @@ Partial Class report
         ' Button4
         ' 
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button4.FlatStyle = FlatStyle.Flat
+        Button4.FlatAppearance.BorderSize = 0
+        Button4.FlatAppearance.MouseOverBackColor = Color.White
+        Button4.FlatStyle = FlatStyle.Popup
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button4.ForeColor = Color.DeepSkyBlue
-        Button4.Location = New Point(559, 204)
+        Button4.Location = New Point(559, 218)
         Button4.Name = "Button4"
         Button4.Size = New Size(87, 30)
         Button4.TabIndex = 2
@@ -108,7 +116,7 @@ Partial Class report
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(350, 210)
+        TextBox1.Location = New Point(340, 224)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(203, 23)
         TextBox1.TabIndex = 3
@@ -142,10 +150,12 @@ Partial Class report
         ' 
         Button5.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button5.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button5.FlatStyle = FlatStyle.Flat
+        Button5.FlatAppearance.BorderSize = 0
+        Button5.FlatAppearance.MouseOverBackColor = Color.White
+        Button5.FlatStyle = FlatStyle.Popup
         Button5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button5.ForeColor = Color.DeepSkyBlue
-        Button5.Location = New Point(278, 209)
+        Button5.Location = New Point(278, 218)
         Button5.Name = "Button5"
         Button5.Size = New Size(92, 30)
         Button5.TabIndex = 5
@@ -193,7 +203,9 @@ Partial Class report
         ' 
         Button6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button6.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button6.FlatStyle = FlatStyle.Flat
+        Button6.FlatAppearance.BorderSize = 0
+        Button6.FlatAppearance.MouseOverBackColor = Color.White
+        Button6.FlatStyle = FlatStyle.Popup
         Button6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button6.ForeColor = Color.DeepSkyBlue
         Button6.Location = New Point(946, 249)

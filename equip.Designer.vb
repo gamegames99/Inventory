@@ -97,7 +97,9 @@ Partial Class equip
         ' 
         Button5.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button5.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button5.FlatStyle = FlatStyle.Flat
+        Button5.FlatAppearance.BorderSize = 0
+        Button5.FlatAppearance.MouseOverBackColor = Color.White
+        Button5.FlatStyle = FlatStyle.Popup
         Button5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button5.ForeColor = Color.DeepSkyBlue
         Button5.Location = New Point(371, 455)
@@ -119,7 +121,9 @@ Partial Class equip
         ' 
         Button6.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button6.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button6.FlatStyle = FlatStyle.Flat
+        Button6.FlatAppearance.BorderSize = 0
+        Button6.FlatAppearance.MouseOverBackColor = Color.White
+        Button6.FlatStyle = FlatStyle.Popup
         Button6.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button6.ForeColor = Color.DeepSkyBlue
         Button6.Location = New Point(270, 455)
@@ -185,7 +189,9 @@ Partial Class equip
         ' 
         Button2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button2.FlatStyle = FlatStyle.Flat
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatAppearance.MouseOverBackColor = Color.White
+        Button2.FlatStyle = FlatStyle.Popup
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
         Button2.Location = New Point(27, 455)
@@ -266,12 +272,14 @@ Partial Class equip
         ' 
         Button1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button1.FlatStyle = FlatStyle.Flat
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatAppearance.MouseOverBackColor = Color.White
+        Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button1.ForeColor = Color.DeepSkyBlue
-        Button1.Location = New Point(17, 456)
+        Button1.Location = New Point(19, 455)
         Button1.Name = "Button1"
-        Button1.Size = New Size(75, 30)
+        Button1.Size = New Size(88, 30)
         Button1.TabIndex = 2
         Button1.Text = "Refresh"
         Button1.UseVisualStyleBackColor = False
@@ -280,12 +288,14 @@ Partial Class equip
         ' 
         Button3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button3.FlatStyle = FlatStyle.Flat
+        Button3.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.MouseOverBackColor = Color.White
+        Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
-        Button3.Location = New Point(107, 455)
+        Button3.Location = New Point(113, 455)
         Button3.Name = "Button3"
-        Button3.Size = New Size(75, 30)
+        Button3.Size = New Size(85, 30)
         Button3.TabIndex = 2
         Button3.Text = "Delete"
         Button3.UseVisualStyleBackColor = False
@@ -294,12 +304,14 @@ Partial Class equip
         ' 
         Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Button4.FlatStyle = FlatStyle.Flat
+        Button4.FlatAppearance.BorderSize = 0
+        Button4.FlatAppearance.MouseOverBackColor = Color.White
+        Button4.FlatStyle = FlatStyle.Popup
         Button4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button4.ForeColor = Color.DeepSkyBlue
-        Button4.Location = New Point(471, 456)
+        Button4.Location = New Point(471, 455)
         Button4.Name = "Button4"
-        Button4.Size = New Size(75, 30)
+        Button4.Size = New Size(99, 30)
         Button4.TabIndex = 2
         Button4.Text = "Search"
         Button4.UseVisualStyleBackColor = False
@@ -308,9 +320,9 @@ Partial Class equip
         ' 
         TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         TextBox1.BorderStyle = BorderStyle.FixedSingle
-        TextBox1.Location = New Point(220, 462)
+        TextBox1.Location = New Point(247, 462)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(245, 23)
+        TextBox1.Size = New Size(218, 23)
         TextBox1.TabIndex = 3
         ' 
         ' GroupBox2

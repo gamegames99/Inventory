@@ -67,6 +67,8 @@ Public Class menu
             formToShow = New stock()
         ElseIf clickedButton Is Button3 Then
             formToShow = New report()
+        ElseIf clickedButton Is Label1 Then
+            formToShow = New menu()
         End If
 
         If formToShow IsNot Nothing Then
@@ -78,5 +80,9 @@ Public Class menu
             formToShow.BringToFront()
             formToShow.Show()
         End If
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        Panel3.Controls.Clear()
     End Sub
 End Class

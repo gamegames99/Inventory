@@ -318,17 +318,17 @@ Public Class equip
         updatetable()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim searchTerm As String = TextBox1.Text.Trim().ToLower()
+        Dim searchTerm = TextBox1.Text.Trim.ToLower
         If String.IsNullOrWhiteSpace(searchTerm) Then
             MessageBox.Show("Field is empty. Type at least one character", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
         DataGridView1.ClearSelection()
-        Dim matchFound As Boolean = False
+        Dim matchFound = False
         For Each row As DataGridViewRow In DataGridView1.Rows
-            Dim rowContainsTerm As Boolean = False
+            Dim rowContainsTerm = False
             For Each cell As DataGridViewCell In row.Cells
-                If cell.Value IsNot Nothing AndAlso cell.Value.ToString().ToLower().Contains(searchTerm) Then
+                If cell.Value IsNot Nothing AndAlso cell.Value.ToString.ToLower.Contains(searchTerm) Then
                     rowContainsTerm = True
                     cell.Selected = True
                     Exit For

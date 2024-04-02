@@ -156,7 +156,7 @@ Public Class stock
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
-            Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to update this record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim confirm As DialogResult = MessageBox.Show("Confirm return item? Y/N", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If confirm = DialogResult.Yes Then
                 If DataGridView2.SelectedRows.Count > 0 Then
@@ -214,7 +214,7 @@ Public Class stock
                             conn.Close()
                         End Using
 
-                        MsgBox("Update Successful!")
+                        MsgBox("Return Successful!")
                         updatetable()
                         newtable()
                     Else

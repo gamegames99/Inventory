@@ -42,10 +42,10 @@ Partial Class menu
         ' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.BackColor = Color.DimGray
+        Panel1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Panel1.Controls.Add(ProgressBar1)
         Panel1.Controls.Add(Label1)
+        Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1284, 40)
@@ -64,6 +64,7 @@ Partial Class menu
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.DeepSkyBlue
+        Label1.ImageAlign = ContentAlignment.MiddleLeft
         Label1.Location = New Point(3, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(286, 32)
@@ -72,12 +73,12 @@ Partial Class menu
         ' 
         ' Panel2
         ' 
-        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Panel2.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
         Panel2.Controls.Add(PictureBox1)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button2)
         Panel2.Controls.Add(Button1)
+        Panel2.Dock = DockStyle.Left
         Panel2.ForeColor = Color.Blue
         Panel2.Location = New Point(0, 40)
         Panel2.Name = "Panel2"
@@ -100,9 +101,10 @@ Partial Class menu
         Button3.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button3.FlatAppearance.BorderSize = 0
         Button3.FlatAppearance.MouseOverBackColor = Color.White
-        Button3.FlatStyle = FlatStyle.Flat
+        Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button3.ForeColor = Color.DeepSkyBlue
+        Button3.ImageAlign = ContentAlignment.MiddleLeft
         Button3.Location = New Point(0, 226)
         Button3.Name = "Button3"
         Button3.Size = New Size(200, 50)
@@ -115,7 +117,7 @@ Partial Class menu
         Button2.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button2.FlatAppearance.BorderSize = 0
         Button2.FlatAppearance.MouseOverBackColor = Color.White
-        Button2.FlatStyle = FlatStyle.Flat
+        Button2.FlatStyle = FlatStyle.Popup
         Button2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button2.ForeColor = Color.DeepSkyBlue
         Button2.Location = New Point(0, 179)
@@ -130,7 +132,7 @@ Partial Class menu
         Button1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatAppearance.MouseOverBackColor = Color.White
-        Button1.FlatStyle = FlatStyle.Flat
+        Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Button1.ForeColor = Color.DeepSkyBlue
         Button1.Location = New Point(0, 132)
@@ -142,8 +144,8 @@ Partial Class menu
         ' 
         ' Panel3
         ' 
-        Panel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel3.BackColor = Color.White
+        Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(200, 40)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1084, 671)
