@@ -1,6 +1,7 @@
 ﻿Imports System.Threading.Tasks
 
 Public Class menu
+    Dim loadfrm As New loadscreen
     Private Sub ShowProgressBar()
         If ProgressBar1.InvokeRequired Then
             ProgressBar1.Invoke(Sub() ProgressBar1.Visible = True)
@@ -83,6 +84,12 @@ Public Class menu
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        loadfrm.TopLevel = False
+        loadfrm.FormBorderStyle = FormBorderStyle.None
+        loadfrm.Dock = DockStyle.Fill
         Panel3.Controls.Clear()
+        Panel3.Controls.Add(loadfrm)
+        loadfrm.BringToFront()
+        loadfrm.Show()
     End Sub
 End Class

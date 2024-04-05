@@ -130,7 +130,7 @@ Public Class report
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim searchTerm = TextBox1.Text.Trim.ToLower
         If String.IsNullOrWhiteSpace(searchTerm) Then
-            MessageBox.Show("Field is empty. Type at least one character", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Field is empty. Type at least one character", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return
         End If
         DataGridView1.ClearSelection()
@@ -151,7 +151,7 @@ Public Class report
             End If
         Next
         If Not matchFound Then
-            MessageBox.Show("No matches found", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("No matches found", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -191,6 +191,15 @@ Public Class report
             filePath = saveFileDialog.FileName
             SaveDataToExcel(DataGridView2)
             MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ' Perform the search function
+            Button4_Click(sender, e)
+            ' Prevent further processing of the Enter key
+            e.SuppressKeyPress = True
         End If
     End Sub
 End Class

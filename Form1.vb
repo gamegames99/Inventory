@@ -18,11 +18,11 @@ Public Class Form1
 
                     Using sdr As SQLiteDataReader = cmd.ExecuteReader()
                         If (sdr.Read()) Then
-                            MsgBox("Connected!")
+                            MsgBox("Connected!", MsgBoxStyle.Information)
                             menu.Show()
                             Me.Hide()
                         Else
-                            MsgBox("Invalid credentials.")
+                            MsgBox("Invalid credentials.", MsgBoxStyle.Exclamation)
                             TextBox1.Text = ""
                             TextBox2.Text = ""
                         End If
@@ -49,5 +49,9 @@ Public Class Form1
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.Click
         TextBox2.Clear()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

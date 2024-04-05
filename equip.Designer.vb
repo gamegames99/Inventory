@@ -302,7 +302,7 @@ Partial Class equip
         ' 
         ' Button4
         ' 
-        Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Button4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button4.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         Button4.FlatAppearance.BorderSize = 0
         Button4.FlatAppearance.MouseOverBackColor = Color.White
@@ -318,7 +318,7 @@ Partial Class equip
         ' 
         ' TextBox1
         ' 
-        TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        TextBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Location = New Point(247, 462)
         TextBox1.Name = "TextBox1"

@@ -62,6 +62,7 @@ Partial Class menu
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.FlatStyle = FlatStyle.Popup
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.DeepSkyBlue
         Label1.ImageAlign = ContentAlignment.MiddleLeft

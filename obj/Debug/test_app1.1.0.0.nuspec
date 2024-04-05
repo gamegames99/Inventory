@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>test_app1</id>
+    <version>1.0.0</version>
+    <authors>test_app1</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="802ba8412a73427978f2c6c54a60bf98d5fe5d59" />
+    <dependencies>
+      <group targetFramework="net8.0-windows10.0.18362">
+        <dependency id="EPPlus" version="7.1.0" exclude="Build,Analyzers" />
+        <dependency id="SQLite" version="3.13.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SQLite" version="1.0.118" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows10.0.18362">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows10.0.18362.0\test_app1.runtimeconfig.json" target="lib\net8.0-windows10.0.18362\test_app1.runtimeconfig.json" />
+    <file src="C:\Users\User\source\repos\test_app1\test_app1\bin\Debug\net8.0-windows10.0.18362.0\test_app1.dll" target="lib\net8.0-windows10.0.18362\test_app1.dll" />
+  </files>
+</package>

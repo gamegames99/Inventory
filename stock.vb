@@ -156,7 +156,7 @@ Public Class stock
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
-            Dim confirm As DialogResult = MessageBox.Show("Confirm return item? Y/N", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim confirm As DialogResult = MessageBox.Show("Confirm update? The deducted amount will be sent back.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If confirm = DialogResult.Yes Then
                 If DataGridView2.SelectedRows.Count > 0 Then
@@ -170,7 +170,7 @@ Public Class stock
                         Dim currentQuantity As Integer = Convert.ToInt32(selectedRow.Cells("quantity").Value)
 
                         If newQuantity > currentQuantity Then
-                            MsgBox("The quantity to be returned is higher than the current quantity.", MessageBoxIcon.Error)
+                            MsgBox("Update Failed : Input quantity is higher than the quantity given. Please send a new item.", MessageBoxIcon.Exclamation)
                             Return
                         End If
 
