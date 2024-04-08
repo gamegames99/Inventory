@@ -12,6 +12,25 @@ Public Class stock
     Dim dt As New DataTable
     Dim bp As Bitmap
 
+    Private Sub transactiontable()
+        Dim hdt As New DataTable()
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                conn.Open()
+                Using cmd As New SQLiteCommand("SELECT * FROM transactions", conn)
+                    Using sdr As SQLiteDataReader = cmd.ExecuteReader()
+                        hdt.Load(sdr)
+                    End Using
+                End Using
+                conn.Close()
+            End Using
+            RCN()
+            DataGridView3.DataSource = hdt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
     Private Sub newtable()
         Dim stockTable As New DataTable()
         Try
@@ -25,11 +44,11 @@ Public Class stock
 
                 conn.Close()
             End Using
+            DataGridView2.DataSource = stockTable
+            RC()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        RC()
-        DataGridView2.DataSource = stockTable
     End Sub
     Private Sub updatetable()
         Try
@@ -77,11 +96,17 @@ Public Class stock
         DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
     End Sub
+    Private Sub RCN()
+        DataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+    End Sub
     Private Sub stock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updatetable()
         ResizeColumns()
         newtable()
+        transactiontable()
         RC()
+        RCN()
     End Sub
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         Try
@@ -135,13 +160,25 @@ Public Class stock
                                 addCmd.Parameters.AddWithValue("@eqId", eqId)
                                 addCmd.ExecuteNonQuery()
                             End Using
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "INSERT INTO transactions(Date_added, Quantity, Item_Name, Receiver, Action) VALUES (@date, @qty, @name, @rcv, @action)"
+                                Dim dateAddedParameter As New SQLiteParameter("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                                cmd.Parameters.Add(dateAddedParameter)
 
+                                cmd.Parameters.Add("@qty", DbType.String).Value = TextBox2.Text
+                                cmd.Parameters.Add("@name", DbType.String).Value = TextBox3.Text
+                                cmd.Parameters.Add("@rcv", DbType.String).Value = TextBox5.Text
+                                cmd.Parameters.Add("@action", DbType.String).Value = "Sent Item"
+                                cmd.ExecuteNonQuery()
+                            End Using
                             conn.Close()
-                        End Using
+                            End Using
 
-                        MsgBox("Saved!")
+                            MsgBox("Saved!")
                         updatetable()
                         newtable()
+                        transactiontable()
                     End If
                 Else
                     Throw New Exception("Invalid value")
@@ -194,6 +231,20 @@ Public Class stock
                                 updateEquipmentCmd.ExecuteNonQuery()
                             End Using
 
+                            Using cmd As New SQLiteCommand()
+                                cmd.Connection = conn
+                                cmd.CommandText = "INSERT INTO transactions(Date_added, Quantity, Receiver, Action, Identifier) VALUES (@date, @qty, @rcv, @action, @id)"
+                                Dim dateAddedParameter As New SQLiteParameter("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                                cmd.Parameters.Add(dateAddedParameter)
+
+                                cmd.Parameters.Add("@qty", DbType.String).Value = difference.ToString()
+                                Dim receiverParameter As New SQLiteParameter("@rcv", selectedRow.Cells("Receiver").Value.ToString())
+                                cmd.Parameters.Add(receiverParameter)
+                                cmd.Parameters.Add("@action", DbType.String).Value = "Updated Item"
+                                cmd.Parameters.Add("@id", DbType.String).Value = TextBox7.Text
+                                cmd.ExecuteNonQuery()
+                            End Using
+
                             ' Recalculate the sum of eq_quantity
                             Dim sum As Integer = 0
                             Using sumCmd As New SQLiteCommand("SELECT SUM(eq_quantity) FROM equipment", conn)
@@ -213,6 +264,7 @@ Public Class stock
                         MsgBox("Return Successful!")
                         updatetable()
                         newtable()
+                        transactiontable()
                     Else
                         Throw New Exception("Invalid value for Quantity.")
                     End If
@@ -227,9 +279,9 @@ Public Class stock
     Private filePath As String
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim saveFileDialog As New SaveFileDialog()
+        Dim saveFileDialog As New SaveFileDialog
         saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx"
-        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+        If saveFileDialog.ShowDialog = DialogResult.OK Then
             filePath = saveFileDialog.FileName
             SaveDataToExcel(DataGridView1)
             MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -290,5 +342,15 @@ Public Class stock
 
     Private Sub TextBox6_Click(sender As Object, e As EventArgs) Handles TextBox6.Click
         TextBox6.Text = ""
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim saveFileDialog As New SaveFileDialog
+        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx"
+        If saveFileDialog.ShowDialog = DialogResult.OK Then
+            filePath = saveFileDialog.FileName
+            SaveDataToExcel(DataGridView3)
+            MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class
