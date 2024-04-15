@@ -123,7 +123,7 @@ Public Class stock
         Try
             If DataGridView2.SelectedRows.Count > 0 Then
                 Dim selectedRow As DataGridViewRow = DataGridView2.SelectedRows(0)
-                TextBox6.Text = If(selectedRow.Cells("quantity").Value IsNot Nothing, selectedRow.Cells("quantity").Value.ToString(), "")
+                'TextBox6.Text = If(selectedRow.Cells("quantity").Value IsNot Nothing, selectedRow.Cells("quantity").Value.ToString(), "")
                 TextBox7.Text = If(selectedRow.Cells("identifier").Value IsNot Nothing, selectedRow.Cells("identifier").Value.ToString(), "")
             End If
         Catch ex As Exception
@@ -314,6 +314,7 @@ Public Class stock
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Try
+            Dim selectedRow As DataGridViewRow = DataGridView2.SelectedRows(0)
             Dim rd As Integer
             If DataGridView2.SelectedRows.Count > 0 Then
                 rd = DataGridView2.SelectedRows(0).Cells("SID").Value
@@ -327,10 +328,25 @@ Public Class stock
                     cmd.Parameters.AddWithValue("@sd", rd)
                     cmd.ExecuteNonQuery()
                     MsgBox("Deleted!")
+                    Using cmd As New SQLiteCommand()
+                        cmd.Connection = conn
+                        cmd.CommandText = "INSERT INTO transactions(Date_added, Quantity, Receiver, Action, Identifier) VALUES (@date, @qty, @rcv, @action, @id)"
+                        Dim dateAddedParameter As New SQLiteParameter("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                        cmd.Parameters.Add(dateAddedParameter)
+                        Dim quantityParameter As New SQLiteParameter("@qty", selectedRow.Cells("Quantity").Value.ToString())
+                        cmd.Parameters.Add(quantityParameter)
+                        Dim receiverParameter As New SQLiteParameter("@rcv", selectedRow.Cells("Receiver").Value.ToString())
+                        cmd.Parameters.Add(receiverParameter)
+                        cmd.Parameters.Add("@action", DbType.String).Value = "Deleted Item"
+                        Dim idParameter As New SQLiteParameter("@id", selectedRow.Cells("Identifier").Value.ToString())
+                        cmd.Parameters.Add(idParameter)
+                        cmd.ExecuteNonQuery()
+                    End Using
                     conn.Close()
                     dt.Clear()
                     updatetable()
                     newtable()
+                    transactiontable()
                 End If
             Else
                 MsgBox("No row selected.")
