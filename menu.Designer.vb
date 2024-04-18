@@ -125,7 +125,7 @@ Partial Class menu
         Button2.Name = "Button2"
         Button2.Size = New Size(200, 50)
         Button2.TabIndex = 1
-        Button2.Text = "Stocks"
+        Button2.Text = "Stock Transfer"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Button1
@@ -140,7 +140,7 @@ Partial Class menu
         Button1.Name = "Button1"
         Button1.Size = New Size(200, 50)
         Button1.TabIndex = 0
-        Button1.Text = "Equipments"
+        Button1.Text = "Manage Equipment"
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Panel3

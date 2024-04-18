@@ -14,7 +14,8 @@
           "SQLite": "3.13.0",
           "System.Data.SQLite": "1.0.118",
           "System.Data.SQLite.Core": "1.0.118",
-          "System.Data.SqlClient": "4.8.6"
+          "System.Data.SqlClient": "4.8.6",
+          "MySql.Data": "8.3.0.0"
         },
         "runtime": {
           "test_app1.dll": {}
@@ -523,6 +524,14 @@
         "dependencies": {
           "System.Drawing.Common": "7.0.0"
         }
+      },
+      "MySql.Data/8.3.0.0": {
+        "runtime": {
+          "MySql.Data.dll": {
+            "assemblyVersion": "8.3.0.0",
+            "fileVersion": "8.3.0.0"
+          }
+        }
       }
     }
   },
@@ -867,6 +876,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "MySql.Data/8.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
